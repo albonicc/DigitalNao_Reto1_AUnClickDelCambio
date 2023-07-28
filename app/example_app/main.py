@@ -27,5 +27,10 @@ def pong():
     """
     return {"ping": "pong!"}
 
+@app.get("/hello-world")
+def pong():
+   
+    return {"msg": "Hello World!"}
+
 
 handler = Mangum(app, lifespan="off")
