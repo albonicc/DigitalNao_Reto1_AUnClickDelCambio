@@ -11,6 +11,9 @@ jobs:
     name: Ejecución de pruebas unitarias
 
     steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v2
+
       - name: Configurando Python 3.8
         uses: actions/setup-python@v4
         with:
@@ -19,7 +22,6 @@ jobs:
       - name: Instalar dependencias
         working-directory: app
         run: |
-          ls -al
           python -m pip install --upgrade pip
           pip install pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -34,8 +36,8 @@ jobs:
     name: Build y Push a ECR
 
     steps:
-      - name: Checkout del codigo
-        uses: actions/checkout@v2
+      # - name: Checkout del codigo
+      #   uses: actions/checkout@v2
 
       - name: Configurar credenciales de AWS
         uses: aws-actions/configure-aws-credentials@v1
