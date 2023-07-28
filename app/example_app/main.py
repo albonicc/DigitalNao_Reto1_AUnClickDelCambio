@@ -28,4 +28,4 @@ def pong():
     return {"ping": "pong!"}
 
 
-handler = Mangum(app, enable_lifespan=False)
+handler = Mangum(app, lifespan="off")
