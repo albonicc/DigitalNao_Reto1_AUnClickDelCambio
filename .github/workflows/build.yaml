@@ -36,8 +36,8 @@ jobs:
     name: Build y Push a ECR
 
     steps:
-      # - name: Checkout del codigo
-      #   uses: actions/checkout@v2
+      - name: Checkout del codigo
+        uses: actions/checkout@v2
 
       - name: Configurar credenciales de AWS
         uses: aws-actions/configure-aws-credentials@v1
