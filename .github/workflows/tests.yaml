@@ -1,4 +1,4 @@
-name: Testing
+name: Unit Testing
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ on:
 jobs:
   testing:
     runs-on: ubuntu-latest
-    name: Ejecución de pruebas unitarias
+    name: Unit Testing
 
     steps:
       - name: Checkout del codigo
